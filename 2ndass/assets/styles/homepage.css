@@ -1,0 +1,94 @@
+/*===============================
+    GENERAL STYLES
+ ================================*/
+
+
+/* DASHBOARD STYLE ONE */
+
+.example{
+    display: none;
+}
+
+.style-box {
+    padding-top: 5px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+@media(max-width: 550px){
+    .col-xs-12 .style-box {
+    height: 21vh;
+    }
+
+    .col-xs-6 .style-box {
+    height: 26.5vh;
+    }
+}
+
+
+@media(min-width: 550px) and (max-width: 1200px){
+    .style-box {
+    height: 25.5vh;
+    }
+}
+
+
+@media(min-width: 1200px){
+    .style-box {
+    height: 20vh;
+    }
+}
+
+
+a .style-box {
+    color: #fff;
+}
+
+.style-box h3,
+.style-box h6,
+style-box span {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.style-box span {
+    padding-bottom: 10px;
+}
+
+.orange {
+    background-color: #E56D0E;
+}
+
+.blue {
+    background-color: #008598;
+}
+
+.pink {
+    background-color: #B81E81;
+}
+
+.green {
+    background-color: #1DB272;
+}
+
+.boxtop {
+    margin-top: 5px !important;
+}
+
+@media(max-width: 500px) {
+    .style-box {
+        margin-bottom: 10px;
+    }
+}
+
+body {
+    min-width: 340px;
+}

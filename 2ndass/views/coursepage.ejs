@@ -1,0 +1,407 @@
+<div class="container">
+
+    <!--Title-->
+    <div class="row title">
+        <div class="col-sm-12 col-xs-12 col-sm-offset-0 bhoechie-tab-container center-title title-border">
+            <h3 class="center-title" <b>
+                <span class="cname"><%= course.name %> </span> -
+                <span class="ccode"><%= course.code %></span></b>
+            </h3>
+        </div>
+    </div>
+    <!-------End of title-------------->
+
+
+    <div class="row ">
+        <!------Overview---------------->
+        <div class="categories col-sm-12 col-xs-12 col-sm-offset-0 bhoechie-tab-container bhoechie-border ">
+            <!------Choose Category------------->
+            <!--for lg, md, sm-->
+            <div class="tab-menu col-lg-2 col-sm-3 hidden-xs  ">
+                <div class="list-group ">
+                    <a href="# " class="list-group-item active text-center list-orange ">
+                        <span class="fa-stack fa-lg ">
+                            <i class="fa fa-circle fa-orange fa-stack-2x "></i>
+                            <i class="fa fa-info fa-white fa-stack-1x "></i>
+                        </span>
+                        <br>
+                        <span>General Information</span>
+                    </a>
+                    <a href="# " class="list-group-item text-center list-blue ">
+                        <span class="fa-stack fa-lg ">
+                            <i class="fa fa-circle fa-blue fa-stack-2x "></i>
+                            <i class="fa fa-book fa-white fa-stack-1x "></i>
+                        </span>
+                        <br>
+                        <span>Summaries & Old Exams</span>
+                    </a>
+                    <a href="# " class="list-group-item text-center list-green ">
+                        <span class="fa-stack fa-lg ">
+                            <i class="fa fa-circle fa-green fa-stack-2x "></i>
+                            <i class="fa fa-pencil fa-white fa-stack-1x "></i>
+                        </span>
+                        <br>
+                        <span>Reviews</span>
+                    </a>
+                    <a href="# " class="list-group-item text-center list-pink ">
+                        <span class="fa-stack fa-lg ">
+                            <i class="fa fa-circle fa-pink fa-stack-2x "></i>
+                            <i class="fa fa-ellipsis-h fa-white fa-stack-1x "></i>
+                        </span>
+                        <br>
+                        <span>More Details</span>
+                    </a>
+                </div>
+            </div>
+            <!-----------End for lg, md, sm------------------->
+
+            <!--for xs-->
+            <div class="divcategories col-xs-12 visible-xs ">
+                <div class="list-group row ">
+                    <a href="# " class="list-group-item active text-center list-orange col-xs-3">
+                        <span class="fa-stack fa-lg ">
+                            <i class="fa fa-circle fa-orange fa-stack-2x "></i>
+                            <i class="fa fa-info fa-white fa-stack-1x "></i>
+                        </span>
+                    </a>
+                    <a href="# " class="list-group-item text-center list-blue col-xs-3 ">
+                        <span class="fa-stack fa-lg ">
+                            <i class="fa fa-circle fa-blue fa-stack-2x "></i>
+                            <i class="fa fa-book fa-white fa-stack-1x "></i>
+                        </span>
+                    </a>
+                    <a href="# " class="list-group-item text-center list-green col-xs-3 ">
+                        <span class="fa-stack fa-lg ">
+                            <i class="fa fa-circle fa-green fa-stack-2x "></i>
+                            <i class="fa fa-pencil fa-white fa-stack-1x "></i>
+                        </span>
+                    </a>
+                    <a href="# " class="list-group-item text-center list-pink col-xs-3 ">
+                        <span class="fa-stack fa-lg ">
+                            <i class="fa fa-circle fa-pink fa-stack-2x "></i>
+                            <i class="fa fa-ellipsis-h fa-white fa-stack-1x "></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <!--------End for xs-------------->
+            <!---------End for categories------------->
+
+            <!---------Display information of the categories---------------->
+            <div class="col-lg-10 col-md-9 col-sm-9 col-xs-12 bhoechie-tab">
+
+                <!-- General Information -->
+                <div class="bhoechie-tab-content active">
+                    <div class="visible-xs orange fa-white totpadding">General Information</div>
+
+                    <!----------Show level, rating, and passing rate----------->
+                    <div class="lrp row list-group" style=" ">
+
+                        <!--------Show level---------->
+                        <div class="lrpheight list-group-item col-xs-4 text-center" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="Difficulty level">
+                            <span class=" fa-stack fa-lg " title="Difficulty level ">
+                                <i class="fa fa-gear fa-orange fa-stack-1x"></i>
+                            </span>
+                            <span class="fa-orange ">
+                            <!--------For xs--------------->
+                                <span class="visible-xs clevel">
+                                    <!---------Display right level-------->
+                                    <% if(course.level == 0){ %>
+                                        No level
+                                    <% } else{ %>  
+                                        <%= "Level " + course.level %>
+                                    <% } %>
+                                </span>
+                            <!----------End for xs--------->
+                            <!----------For lg, md, sm-------->
+                            <span class="hidden-xs clevelfull">
+                                    <!---------Display right level-------->
+                                    <% if(course.level == 0){ %>
+                                        No level
+                                    <% } else if (course.level == 1) { %>  
+                                        <%=  course.level + ". Introductory" %>
+                                    <% } else if (course.level == 2) { %>  
+                                        <%=  course.level + ". Deepening" %>
+                                    <% } else if (course.level == 3) { %>
+                                        <%=  course.level + ". Advanced" %>
+                                    <% } else { %>
+                                        Unknown level
+                                    <% } %>
+                                </span>
+                            <!--------End for lg, md, sm--------->
+
+                            </span>
+                        </div>
+                        <!------------End level-------------------->
+
+                        <!--------Show rating---------->
+                        <div class="lrpheight list-group-item col-xs-4 text-center" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="Average rating by students">
+                            <span class="fa-stack fa-lg ">
+                                <i class="fa fa-star fa-orange fa-stack-1x "></i>
+                            </span>
+                            <span class="fa-orange crating">
+                                    <% if(course.rating == -1.0){ %>
+                                        Unknown
+                                    <% } else if (course.level > 10) { %>
+                                        10/10
+                                    <% } else { %>
+                                        <%= course.rating + "/10" %>
+                                    <% } %>
+                            </span>
+                        </div>
+                        <!------------End rating--------------->
+
+                        <!--------Show passing rate---------->
+                        <div class="lrpheight lastchild list-group-item col-xs-4 text-center " data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="Passing rate">
+                            <span class="fa-stack fa-lg " title="Passing rate ">
+                                <i class="flaticon-passed-exam fa-orange "></i>
+                            </span>
+                            <span class="fa-orange ">
+                                <!---------for lg, md, sm----------->
+                                <span class="hidden-xs ">
+                                    Passing: 
+                                </span>
+                            <!--------for xs--------------->
+                            <span class="cpassing">
+                                    <% if(course.rating == -1.0){ %>
+                                        Unknown
+                                    <% } else if (course.level > 100) { %>
+                                        100%
+                                    <% } else { %>
+                                        <%= course.passingrate + "%" %>
+                                    <% } %></span>
+                            <!-----------end for lg, md, sm, xs---------->
+                            </span>
+                        </div>
+                        <!--------End passing rate---------->
+                    </div>
+                    <!----------End level, rating, and passing rate----------->
+
+                    <!-----------show Specific Details----------------->
+                    <!--------------Show timeslots--------------------->
+                    <h4 class="subtitle fa-orange ">Available timeslots</h4>
+                    <% for(var i=0; i<course['periods'].length; i++) {%>
+                        <span class=" "> 
+                            <i class="fa fa-clock-o fa-1x "></i>
+                            Quartile: 
+                            <span class="cquartile "> <%= course['periods'][i].quartile %> </span> Timeslot:
+                        <span class="ctimeslot "> <%= course['periods'][i].timeslot %> </span><br>
+                        </span>
+                        <% } %>
+
+                            <!-----------------End Timeslots------------------>
+
+                            <!--------------Show Teachers--------------------->
+                            <h4 class="subtitle fa-orange">Responsible lecturer</h4>
+                            <% for(var i=0; i<course['teachers'].length; i++) {%>
+                                <span class=" "> 
+                                    <i class="fa fa-graduation-cap fa-1x"></i>
+                                    <span class="clecturer"> 
+                                        <%= course['teachers'][i].name %> 
+                                    </span>
+                                </span>
+                                <br>
+                                <% } %>
+                                    <!-----------------End Teachers------------------>
+
+                                    <!--------------Show Department--------------------->
+                                    <h4 class="subtitle fa-orange">Provided by</h4>
+                                    <span class="cdepartment"> <%= course.department %>  
+                        <span class="csubdepartment"> 
+                            <% if(course.subdepartment != null){ %>
+                                <%= " - " + course.subdepartment %> 
+                            <% } %> 
+                        </span>
+                                    </span>
+                                    <!-----------------End Department------------------>
+
+                                    <!--------------Show website--------------------->
+                                    <% if(course.website != null){ %>
+                                        <h4 class="subtitle fa-orange">Course page</h4>
+                                        <a href='<%= course.website %>' class="cwebsite">Link</a>
+                                        <% } %>
+                                            <!-----------------End website------------------>
+
+                                            <!-----------------Show description-------------->
+                                            <div class="mar-bot">
+                                                <h4 class=" subtitle fa-orange">Description</h4>
+                                                <span class="cdescription"><%= course.description %></span>
+                                            </div>
+                                            <!---------------End description------------------------>
+                </div>
+                <!----------End of general information------------------>
+
+                <!-- Summaries & Old Exams -->
+                <div class="bhoechie-tab-content ">
+                    <div class="visible-xs blue fa-white totpadding">Summaries & Old Exams </div>
+                    <div class="divsubtitle">
+                        <h4 class="fa-blue ">Summaries</h4>
+                        <div class="sumbot">
+                            <% if(course['summaries'].length != 0){ %>      
+                                <% for(var i = 0; i<course['summaries'].length; i++) { %>
+                                    <a class="col-xs-12" href="<%= course['summaries'][i].url %>" download>
+                                            <%= course['summaries'][i].name %>
+                                    </a>
+                                <% } %>
+                            <% } else { %>
+                                <div class="col-xs-12">No summaries available.</div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="fa-white" style="font-size:1px;">l</div>
+                    <div class="divsubtitle">
+                    <h4 class="fa-blue ">Old Exams</h4>
+                        <% if(course['exams'].length != 0){ %>
+                            <% for(var i=0; i<course['exams'].length; i++) {%>
+                                <% if (course['exams'][i].solution) { %>
+                                    <a class="col-sm-6 col-xs-12" href="<%= course['exams'][i].url %>" download>
+                                        <%= course['exams'][i].name %>
+                                    </a>
+                                <% } else { %>
+                                    <a class="col-sm-12 col-xs-12" href="<%= course['exams'][i].url %>" download>
+                                        <%= course['exams'][i].name %>
+                                    </a>
+                                <% } %>
+                            <% } %>
+                        <% } else { %>
+                            <div class="col-xs-12">No old exams available.</div>
+                        <% } %>
+                    
+                    </div>
+                </div>
+                <!-- End Summaries & Old Exams -->
+
+                <!-- Reviews -->
+                <div class="bhoechie-tab-content">
+                    <div class="visible-xs green fa-white totpadding">Reviews </div>
+                    <div class="list-group">
+                        <% if(course['reviews'].length != 0){ %>
+                            <% for(var i=0; i<course['reviews'].length; i++) { %>
+                                <div class="list-group-item col-sm-10 col-xs-12 col-sm-offset-1 review-group">
+                                    <div class="review-title fa-green col-xs-12">
+                                        <span class="col-xs-10 title-review">
+                                            <%= course['reviews'][i].title %>
+                                        </span>
+                                        <span class="col-xs-2 center text-right">
+                                            <i class="caretfilter fa fa-caret-up fa-lg"></i>
+                                        </span>
+                                        <span class="<%="reviewrating"+i %> hidden"><%= course['reviews'][i].rating %></span>    
+                                        <span class="rating col-sm-4 col-xs-6 hidden-400">
+                                            <% for(var j = 0; j < 5; j++){ %>
+                                                <% if (course['reviews'][i].rating >= j + 0.75) { %>
+                                                    <i class="fa fa-star"></i>
+                                                <% } else if (course['reviews'][i].rating >= j + 0.25 && 
+                                                    course['reviews'][i].rating < j + 0.75){ %>
+                                                    <i class="fa fa-star-half-o"></i>
+                                                 <% } else { %>
+                                                    <i class="fa fa-star-o"></i>
+                                                <% } %> 
+                                            <% } %>
+                                        </span>
+                                        <span class="rating col-sm-4 col-xs-12 visible-400">
+                                            <% for(var j = 0; j < 5; j++){ %>
+                                                <% if (course['reviews'][i].rating >= j + 0.75) { %>
+                                                    <i class="fa fa-star"></i>
+                                                <% } else if (course['reviews'][i].rating >= j + 0.25 && 
+                                                    course['reviews'][i].rating < j + 0.75){ %>
+                                                    <i class="fa fa-star-half-o"></i>
+                                                 <% } else { %>
+                                                    <i class="fa fa-star-o"></i>
+                                                <% } %> 
+                                            <% } %>
+                                        </span>
+                                        <span class="col-sm-4 col-xs-12 visible-400">
+                                            <%= "by " + course['reviews'][i].author %>
+                                        </span>
+                                        <span class="col-sm-4 col-xs-6 hidden-400">
+                                            <%= "by " + course['reviews'][i].author %>
+                                        </span>
+                                        <span class="col-sm-4 col-xs-12 hidden-xs">
+                                            <%= "by " + course['reviews'][i].date %>
+                                        </span>
+                                    </div>
+                                <% if (course['reviews'][i].content != null) { %>
+                                    <div class="review-content col-xs-12">
+                                        <span class=""> 
+                                            <%=course['reviews'][i].content%>
+                                        </span>
+                                    </div>
+                                <% } %>    
+                            </div>
+                        <% } %>
+                    <% } else { %>
+                        <div class="col-xs-12">No reviews available.</div>
+                    <% } %>
+                    </div>
+                </div>
+            
+                <!-- End of Reviews -->
+
+                <!-----------More Details---------------->
+                <div class="bhoechie-tab-content">
+                    <div class="visible-xs pink fa-white totpadding">More Details </div>
+                    <h4 class="subtitle fa-pink">Grade Division and Calculate Your Grade</h4>
+                    <row class="noleftpadding">
+                        <div class="col-xs-12 noleftpadding">
+                            <% for (var i = 0; i<course['gradedivisions'].length; i++) { %>
+                                <span class="col-xs-678 col-xs-7 col-sm-8 col-lg-9 noleftpadding">
+                                    <%= course['gradedivisions'][i].examinationType %>
+                                </span>
+                                <div class="col-xs-1-2 col-xs-2 col-sm-1">
+                                    <span id="<%="weight" + i %>"><%= course['gradedivisions'][i].percentage%></span><span>%</span>
+                                </div>
+                                <div class="col-xs-234 col-xs-3 col-sm-2 col-lg-1">
+                                    <input class="input-box form-control" id="<%="input" + i %>" type="number" placeholder="e.g. 6.7">
+                                </div>
+                                <% } %>
+                        </div>
+                        <div class=" col-xs-12 noleftpadding ">
+                            <div class="col-xs-12 col-sm-11 outputform noleftpadding "></div>
+                        </div>
+                        <div class="col-xs-12 noleftpadding ">
+                            <span class="col-xs-678 col-xs-7 col-sm-8 col-lg-9 noleftpadding ">Total Grade</span>
+                            <span class="col-xs-1-2 col-xs-2 col-sm-1">100%</span>
+                            <div class="col-xs-234 col-xs-3 col-sm-2 col-lg-1">
+                                <output class="input-box form-control" id="result" type="number "></output>
+                            </div>
+                        </div>
+                    </row>
+
+                    <h4 class="subtitle fa-pink ">Books</h4>
+                    <div class="col-xs-12">
+                        <% for(var i = 0; i < course['books'].length; i++) { %>
+                            <span class="col-xs-12"> <%= course['books'][i].name %> </span>
+                            <span class="col-xs-offset-1 col-xs-11"><%= course['books'][i].author %></span>
+                            <% if (course['books'][i].isbn != null){ %>
+                                <% if (course['books'][i].isisbn) { %>
+                                    <span class="col-xs-offset-1 col-xs-11"><%= "ISBN: " + course['books'][i].isbn %></span>
+                                <% } else { %>
+                                    <span class="col-xs-offset-1 col-xs-11"><%= "Dictationnumber: " + course['books'][i].isbn %></span>
+                                <% } %>
+                            <% } %>   
+                            <% if (course['books'][i].pdf != null){ %>
+                                <a class="col-xs-11 col-xs-offset-1" href="<%= course['books'][i].pdf %>" download>
+                                    Download PDF
+                                </a>
+                            <% } %>
+                            <% if (course['books'][i].bolurl != null){ %>
+                                <a class="col-xs-11 col-xs-offset-1" href="<%= course['books'][i].bolurl %>" >
+                                    Buy on bol.com
+                                </a>
+                            <% } %>
+                            <% if (course['books'][i].ssurl != null){ %>
+                                <a class="col-xs-11 col-xs-offset-1" href="<%= course['books'][i].ssurl %>" >
+                                    Buy on Studystore.com
+                                </a>
+                            <% } %>   
+                        <% } %>
+                    </div>
+
+                </div>
+                <!--------------End of more details----------------->
+
+            </div>
+        </div>
+    </div>
+    <!-------------------End of overview-------------------->
+</div>
